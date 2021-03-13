@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -15,8 +16,8 @@ jobs:
       - uses: actions/setup-node@main
         with:
           node-version: '12.x'
-      #- run: npm install
-      #- run: npm run build
+          #- run: npm install
+          #- run: npm run build
           #npm i
       - run: |
           ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
